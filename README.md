@@ -31,3 +31,15 @@ skip-character-set-client-handshake
 Взято из http://gahcep.github.io/blog/2013/01/05/mysql-utf8/
 
 # В LogAnalayzer установить кодировку utf8
+
+# Rsyslog удаление старых записей в базе
+
+Хранить данные нужно за последние 30 дней. Стырые нужно удалять, сделать это можно командой
+
+mysql -u <user> -p<pass> -e 'DELETE FROM SystemEvents WHERE ReceivedAt < date_add(current_date, interval -30 day)' <Syslog-DATABASE>
+
+Добавляем ее в cron
+
+crontab -e
+
+0 01 * * * mysql -u _user_ -p_pass_ -e 'DELETE FROM SystemEvents WHERE ReceivedAt < date_add(current_date, interval -30 day)' Syslog
