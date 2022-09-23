@@ -29,3 +29,5 @@ collation-server=utf8_unicode_ci
 skip-character-set-client-handshake 
 
 Взято из http://gahcep.github.io/blog/2013/01/05/mysql-utf8/
+
+# В LogAnalayzer установить кодировку utf8
