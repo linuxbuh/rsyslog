@@ -1,0 +1,2 @@
+# rsyslog
+Файлы настроек rsyslog
